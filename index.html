@@ -3,9 +3,158 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>John Doe - Full-Stack Developer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
-    Hello World!
+    <div class="container">
+      <header>
+        <div>
+          <h1>Timothy</h1>
+          <p class="subtitle">Tech Enthusiast</p>
+        </div>
+        <img
+          src="/placeholder.svg?height=150&width=150"
+          alt="John Doe"
+          class="profile-pic"
+        />
+      </header>
+
+      <nav>
+        <ul>
+          <li><button class="active" data-tab="about">About</button></li>
+          <li><button data-tab="skills">Skills</button></li>
+          <li><button data-tab="projects">Projects</button></li>
+          <li><button data-tab="contact">Contact</button></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section id="about" class="tab-content active">
+          <h2>About Me</h2>
+          <div class="about-content">
+            <img
+              src="/placeholder.svg?height=300&width=400"
+              alt="John working"
+              class="about-image"
+            />
+            <div>
+              <p>
+                I'm a passionate developer with 5+ years of experience in
+                creating awesome web applications. I love turning complex
+                problems into simple, beautiful, and intuitive designs. When I'm
+                not coding, you can find me exploring new technologies or
+                contributing to open-source projects.
+              </p>
+              <p>
+                My journey in tech has been exciting and full of learning. I've
+                worked on projects ranging from small startups to large
+                enterprises, always focusing on delivering high-quality,
+                scalable solutions.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="tab-content">
+          <h2>Skills</h2>
+          <div class="skills-grid">
+            <div class="skill">React</div>
+            <div class="skill">TypeScript</div>
+            <div class="skill">Node.js</div>
+            <div class="skill">Next.js</div>
+            <div class="skill">Tailwind CSS</div>
+            <div class="skill">GraphQL</div>
+            <div class="skill">Python</div>
+            <div class="skill">Docker</div>
+            <div class="skill">AWS</div>
+            <div class="skill">Git</div>
+          </div>
+          <div class="workspace">
+            <h3>My Workspace</h3>
+            <img
+              src="/placeholder.svg?height=300&width=600"
+              alt="John's workspace"
+              class="workspace-image"
+            />
+          </div>
+        </section>
+
+        <section id="projects" class="tab-content">
+          <h2>Projects</h2>
+          <div class="projects-grid">
+            <div class="project">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Project X"
+              />
+              <div class="project-info">
+                <h3>Project X</h3>
+                <p>A revolutionary AI-powered app</p>
+              </div>
+            </div>
+            <div class="project">
+              <img src="/placeholder.svg?height=200&width=300" alt="Cool API" />
+              <div class="project-info">
+                <h3>Cool API</h3>
+                <p>High-performance RESTful API</p>
+              </div>
+            </div>
+            <div class="project">
+              <img
+                src="/placeholder.svg?height=200&width=300"
+                alt="Awesome UI"
+              />
+              <div class="project-info">
+                <h3>Awesome UI</h3>
+                <p>Beautiful and responsive UI kit</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="tab-content">
+          <h2>Contact</h2>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+          </div>
+          <p>
+            Feel free to reach out for collaborations or just a friendly chat!
+          </p>
+          <img
+            src="/placeholder.svg?height=300&width=600"
+            alt="Contact John"
+            class="contact-image"
+          />
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2023 John Doe. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="script.js">
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Tab switching functionality
+      document.querySelectorAll("nav button").forEach((button) => {
+        button.addEventListener("click", () => {
+          document
+            .querySelectorAll(".tab-content")
+            .forEach((content) => content.classList.remove("active"));
+          document
+            .querySelectorAll("nav button")
+            .forEach((btn) => btn.classList.remove("active"));
+          document.getElementById(button.dataset.tab).classList.add("active");
+          button.classList.add("active");
+        });
+      });
+    </script>
   </body>
 </html>
